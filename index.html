@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prince CSC Center – Om Nagar, Araria, Bihar</title>
+<meta name="description" content="Prince CSC Center, Om Nagar, Araria – PAN, Aadhaar, Passport, Voter ID, Ayushman Card aur sabhi online sarkari seva.">
+<style>
+:root{--bg:#f6f8fc;--card:#fff;--text:#14213d;--muted:#5b6478;--brand:#1d4ed8;--brand2:#f59e0b;--wa:#25d366;--line:#e3e8f2}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1424;--card:#16203a;--text:#eef2fb;--muted:#a3adc5;--line:#27335a}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+.wrap{max-width:1000px;margin:auto;padding:0 16px}
+header{background:linear-gradient(135deg,#1d4ed8,#0b2a82);color:#fff;padding:56px 0 64px;text-align:center}
+header h1{font-size:clamp(28px,6vw,46px);font-weight:800}
+header h1 span{color:var(--brand2)}
+header p{margin-top:10px;opacity:.9}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px}
+.btn.call{background:var(--brand2);color:#1a1a1a}
+.btn.wa{background:var(--wa);color:#06361a}
+h2{text-align:center;margin:40px 0 6px;font-size:26px}
+.sub{text-align:center;color:var(--muted);margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;text-decoration:none;color:var(--text);transition:transform .2s,box-shadow .2s;display:block}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(29,78,216,.18)}
+.card .ic{font-size:34px}
+.card h3{font-size:17px;margin:8px 0 4px}
+.card small{color:var(--wa);font-weight:700}
+.info{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:10px;display:grid;gap:10px}
+.info a{color:var(--brand)}
+footer{text-align:center;color:var(--muted);padding:30px 16px 90px;font-size:14px}
+.float{position:fixed;right:16px;bottom:16px;background:var(--wa);color:#06361a;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Prince <span>CSC Center</span></h1>
+    <p>Sabhi online sarkari seva ek hi jagah – tez, bharosemand aur sasti</p>
+    <div class="btns">
+      <a class="btn call" href="tel:+916299227427">📞 Call Karein</a>
+      <a class="btn wa" href="https://wa.me/916299227427?text=Namaste%20Prince%20CSC%20Center%2C%20mujhe%20jaankari%20chahiye." target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>Hamari Sevayein</h2>
+  <p class="sub">Kisi bhi seva par tap karein – WhatsApp khulega, bas bhej dein</p>
+  <div class="grid" id="services"></div>
+
+  <h2>Sampark</h2>
+  <div class="info">
+    <div>📍 <b>Prince CSC Center</b>, Om Nagar, Araria, Bihar – 854311</div>
+    <div>📞 <a href="tel:+916299227427">6299 227 427</a></div>
+    <div>🕘 Subah 9 baje se shaam 7 baje tak (Roz)</div>
+  </div>
+</main>
+
+<footer>© <span id="y"></span> Prince CSC Center, Araria. Sabhi adhikar surakshit.</footer>
+<a class="float" href="https://wa.me/916299227427" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>
+const NUM = "916299227427";
+const services = [
+  ["🪪","PAN Card"],["🆔","Aadhaar Card"],["🛂","Passport"],["🗳️","Voter ID"],
+  ["🚗","Driving License"],["👶","Birth Certificate"],["📜","Death Certificate"],
+  ["🏥","Ayushman Card"],["📋","E-Shram / EAN"],["🏠","Income / Caste / Residence"],
+  ["💡","Bijli Bill / Online Form"],["🖨️","Print / Photocopy / Typing"]
+];
+const grid = document.getElementById("services");
+services.forEach(([ic,name])=>{
+  const msg = encodeURIComponent("Namaste Prince CSC Center, mujhe " + name + " ke liye apply karna hai.");
+  const a = document.createElement("a");
+  a.className = "card";
+  a.href = "https://wa.me/" + NUM + "?text=" + msg;
+  a.target = "_blank"; a.rel = "noopener";
+  a.innerHTML = '<div class="ic">'+ic+'</div><h3>'+name+'</h3><small>WhatsApp par Apply →</small>';
+  grid.appendChild(a);
+});
+document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
